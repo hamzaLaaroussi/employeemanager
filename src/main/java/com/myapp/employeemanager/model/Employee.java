@@ -29,18 +29,23 @@ public class Employee implements Serializable {
     private String imageUrl;
     @Column(nullable = false, updatable = false)
     private String employeeCode;
+    private String jobTitle;
 
     public Employee() {
     }
 
-    public Employee(Long id, String name, String email, String phone, String imageUrl, String employeeCode) {
+    public Employee(Long id, String name, String email, String phone, String imageUrl, String employeeCode, String jobTitle) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.imageUrl = imageUrl;
         this.employeeCode = employeeCode;
+        this.jobTitle = jobTitle;
     }
+
+ 
+    
 
     public Long getId() {
         return id;
@@ -90,6 +95,14 @@ public class Employee implements Serializable {
         this.employeeCode = employeeCode;
     }
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,9 +112,12 @@ public class Employee implements Serializable {
         sb.append(", phone=").append(phone);
         sb.append(", imageUrl=").append(imageUrl);
         sb.append(", employeeCode=").append(employeeCode);
+        sb.append(", jobTitle=").append(jobTitle);
         sb.append('}');
         return sb.toString();
     }
 
+  
+    
 
 }
